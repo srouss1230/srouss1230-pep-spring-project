@@ -25,4 +25,12 @@ public class AccountService {
 
         return accountRepository.save(acct);
     }
+    public Account loginUser(Account acct){
+        return accountRepository.findByUsernameAndPassword(acct.getUsername(), acct.getPassword());
+    }
+
+    //to assist the Message Service in ensuring messages have valid users
+    public Account getAccountForId(int Id){
+        return accountRepository.findByAccountId(Id);
+    }
 }

@@ -6,4 +6,6 @@ import com.example.entity.Account;
 // And I believe the second parameter is for telling it what type it should expect for the primary key.
 public interface AccountRepository extends JpaRepository<Account,Integer>  {
     public Account findByUsername(String username);
+    public Account findByUsernameAndPassword(String username, String password);
+    public Account findByAccountId(int Id);
 }
